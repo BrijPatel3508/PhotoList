@@ -1,0 +1,31 @@
+.loader-container {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin-top: -80px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+}
+.app-spinner {
+    border: 6px solid lighten(blue, 50%);
+    border-top: 6px solid blue;
+    border-radius: 50%;
+    width: 3rem; 
+    height: 3rem;
+    animation: spin 2s linear infinite;
+    margin: auto;
+    margin-top: 55vh;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,20 @@
+<h2 class="text-center">Photo List View</h2>
+<cdk-virtual-scroll-viewport appendOnly itemSize="50" class="photo-list-container">
+    <div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutAlign="space-evenly stretch" fxLayoutGap="8px">
+        <mat-card fxFlex="200px" class="photo-card" *ngFor="let photo of (photos | async)">
+            <img [src]="photo.thumbnailUrl" alt="photo">
+            <mat-card-content class="mb-2">
+                <div class="text-overflow cursor-pointer pt-1" [title]="photo.title">{{photo.title}}</div>
+                <div class="text-overflow text-center pt-1">{{photo.id}}</div>
+                <div class="text-overflow text-center pt-1">{{photo.url}}</div>
+            </mat-card-content>
+            <mat-card-actions class="text-center">
+                <button mat-button (click)="onAction(photo)">{{photo.isComparing ? 'REMOVE' : 'COMPARE'}}</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</cdk-virtual-scroll-viewport>
+<div class="pt-4">
+    <h2 class="text-center">Comparison Table</h2>
+    <app-comparison-table [dataSource]="photosToCompare"></app-comparison-table>
+</div>

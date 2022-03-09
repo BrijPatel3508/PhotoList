@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+.text-center {
+    text-align: center !important;
+}
+
+.cursor-pointer {
+    cursor: pointer !important;
+}
+
+.text-overflow {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+.mt-1 {
+    margin-top: 1rem !important;
+}
+.mb-2 {
+    margin-bottom: 2rem !important;
+}
+.pt-1 {
+    padding-top: 1rem !important;
+}
